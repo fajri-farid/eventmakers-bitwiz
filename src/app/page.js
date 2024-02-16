@@ -12,7 +12,7 @@ export default async function Home() {
 
   return (
     <main>
-      <ShowEvents data={data}/>
+      <ShowEvents data={data} />
     </main>
   );
 }

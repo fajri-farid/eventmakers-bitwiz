@@ -4,8 +4,8 @@ export const ShowEvents = ({ data }) => {
       <h1>hello</h1>
       {data.map((event) => (
         <div key={event.id}>
-          <h2>{event.title}</h2>
-          <p>{event.description}</p>
+          <h2>{event.events.title}</h2>
+          <p>{event.events.description}</p>
         </div>
       ))}
     </main>
