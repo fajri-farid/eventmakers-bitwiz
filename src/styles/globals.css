@@ -2,3 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h2 {
+    @apply font-bold;
+  }
+
+  img {
+    @apply w-full h-auto max-w-[600px] max-h-[300px] object-cover;
+  }
+}

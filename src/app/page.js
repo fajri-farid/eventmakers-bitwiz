@@ -8,10 +8,10 @@ export async function getEvents() {
 
 export default async function Home() {
   const { data } = await getEvents();
-  console.log(data);
+  // console.log(data);
 
   return (
-    <main>
+    <main className="p-5">
       <ShowEvents data={data} />
     </main>
   );
