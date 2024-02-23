@@ -1,6 +1,7 @@
 "use client";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export const Login = () => {
   const router = useRouter();
@@ -55,16 +56,19 @@ export const Login = () => {
             className="border-2 border-black p-4 mb-4 block rounded-lg w-full"
           />
           <div className="flex items-center mb-4">
-            <input
-              type="checkbox"
-              className="mr-2"
-            />
+            <input type="checkbox" className="mr-2" />
             <label htmlFor="rememberMe">Remember Me</label>
           </div>
           <button className="bg-indigo-600 text-white p-2 rounded-xl w-full">
             login
           </button>
         </form>
+        <p className="mt-2 text-center">
+          don't have an account?{" "}
+          <Link href="/register" className="text-blue-600">
+            create your account here
+          </Link>
+        </p>
       </div>
     </div>
   );

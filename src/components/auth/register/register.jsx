@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Link from "next/link";
 
 export const Register = () => {
   const router = useRouter();
@@ -83,6 +84,12 @@ export const Register = () => {
           register
         </button>
       </form>
+      <p className="mt-2 text-center">
+        already have an account?{" "}
+        <Link href="/login" className="text-blue-600">
+          login here
+        </Link>
+      </p>
     </div>
   );
 };

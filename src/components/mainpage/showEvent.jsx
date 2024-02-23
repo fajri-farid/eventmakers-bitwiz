@@ -3,8 +3,8 @@ import React from "react";
 
 export const ShowEvents = ({ data }) => {
   const onErrorHandler = (event) => {
-    event.target.onerror = null; 
-    event.target.src = "/gambar.webp"; 
+    event.target.onerror = null;
+    event.target.src = "/gambar.webp";
   };
 
   return (
@@ -13,7 +13,7 @@ export const ShowEvents = ({ data }) => {
         <div key={event.events.id}>
           <img
             src={event.events.image}
-            onError={onErrorHandler} 
+            onError={onErrorHandler}
             alt={event.events.title}
             className="w-full h-auto max-w-[600px] max-h-[300px] object-cover"
           />
