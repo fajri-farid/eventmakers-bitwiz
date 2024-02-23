@@ -1,3 +1,5 @@
+import { LoginButton } from "@/components/mainpage/loginbutton";
+import { RegisterButton } from "@/components/mainpage/registerbutton";
 import ShowEvents from "@/components/mainpage/showEvent";
 
 export async function getEvents() {
@@ -12,6 +14,10 @@ export default async function Home() {
 
   return (
     <main className="p-5">
+      <div className="flex justify-end gap-5">
+        <LoginButton />
+        <RegisterButton />
+      </div>
       <ShowEvents data={data} />
     </main>
   );
