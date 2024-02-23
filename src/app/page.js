@@ -1,9 +1,18 @@
-import Image from "next/image";
+import ShowEvents from "@/components/mainpage/showEvent";
 
-export default function Home() {
+export async function getEvents() {
+  const res = await fetch("https://eventmakers-api.fly.dev/events/");
+  const data = await res.json();
+  return data;
+}
+
+export default async function Home() {
+  const { data } = await getEvents();
+  // console.log(data);
+
   return (
-    <main>
-    
+    <main className="p-5">
+      <ShowEvents data={data} />
     </main>
   );
 }
