@@ -11,12 +11,20 @@ export const ShowEvents = ({ data }) => {
     <main className="space-y-2 p-5">
       {data.map((event) => (
         <div key={event.events.id}>
-          <img
-            src={event.events.image}
-            onError={onErrorHandler}
-            alt={event.events.title}
-            className="w-full h-auto max-w-[600px] max-h-[300px] object-cover"
-          />
+          {event.events.image ? (
+            <img
+              src={event.events.image}
+              onError={onErrorHandler}
+              alt={event.events.title}
+              className="w-full h-auto max-w-[600px] max-h-[300px] object-cover"
+            />
+          ) : (
+            <img
+              src="/placeholder-image.jpg"
+              alt="Placeholder Image"
+              className="w-full h-auto max-w-[600px] max-h-[300px] object-cover"
+            />
+          )}
           <div className="pt-10">
             <h2>{event.events.title}</h2>
             <p>{event.events.description}</p>
