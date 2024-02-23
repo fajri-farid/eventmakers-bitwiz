@@ -11,6 +11,12 @@ export const CreateEvents = () => {
   const [dateTime, setDateTime] = useState("");
   const [author, setAuthor] = useState("");
 
+  // Mengatur tanggal hari ini sebagai tanggal minimum
+  useEffect(() => {
+    const today = new Date().toISOString().split("T")[0];
+    setDateTime(today);
+  }, []);
+
   const getLoggedInUserId = () => {
     const userData = localStorage.getItem("user");
     if (userData) {
@@ -83,6 +89,7 @@ export const CreateEvents = () => {
         type="date"
         placeholder="dateTime"
         onChange={(e) => setDateTime(e.target.value)}
+        min={dateTime} // Mengatur tanggal minimum
         className="border-2 border-black p-4 mb-4 block rounded-lg w-full"
       />
       <input
