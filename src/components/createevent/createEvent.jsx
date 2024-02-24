@@ -3,8 +3,11 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export const CreateEvents = () => {
+  const router = useRouter();
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
@@ -62,6 +65,8 @@ export const CreateEvents = () => {
 
       const data = await res.json();
       console.log(data);
+
+      router.push("/dashboard");
     } catch (error) {
       console.error("Error creating event:", error);
     }

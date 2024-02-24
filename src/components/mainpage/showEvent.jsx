@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 
 export const ShowEvents = ({ data }) => {
   const onErrorHandler = (event) => {
     event.target.onerror = null;
-    event.target.src = "/gambar.webp";
+    event.target.src = "/gambar.webp"; // Ganti dengan URL gambar placeholder Anda
   };
 
   return (
@@ -12,16 +13,16 @@ export const ShowEvents = ({ data }) => {
       {data.map((event) => (
         <div key={event.events.id}>
           {event.events.image ? (
-            <img
+            <Image
               src={event.events.image}
               onError={onErrorHandler}
               alt={event.events.title}
               className="w-full h-auto max-w-[600px] max-h-[300px] object-cover"
             />
           ) : (
-            <img
-              src="/placeholder-image.jpg"
-              alt="Placeholder Image"
+            <Image
+              src="/gambar.webp"
+              alt="No Image"
               className="w-full h-auto max-w-[600px] max-h-[300px] object-cover"
             />
           )}

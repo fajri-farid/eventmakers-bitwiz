@@ -7,14 +7,14 @@ export const Login = () => {
   const router = useRouter();
 
   async function handleSubmitLogin(event) {
-    //tidak me-refresh saat klik login
+    // Prevent page refresh when clicking login
     event.preventDefault();
 
-    //how to get the value
+    // Extract email and password from form
     const email = event.target.email.value;
     const password = event.target.password.value;
 
-    //fetch the api
+    // Fetch the API for authentication
     const res = await fetch("https://eventmakers-api.fly.dev/auth/login", {
       method: "POST",
       headers: {
@@ -27,10 +27,10 @@ export const Login = () => {
     });
     const { payload, token } = await res.json();
 
-    // save payload to local storage
+    // Save payload to local storage
     localStorage.setItem("user", JSON.stringify(payload));
 
-    // store token to cookies
+    // Store token in cookies
     Cookies.set("token", token);
 
     router.push("/dashboard");
@@ -64,7 +64,7 @@ export const Login = () => {
           </button>
         </form>
         <p className="mt-2 text-center">
-          don't have an account?{" "}
+          don&apos;t have an account?{" "}
           <Link href="/register" className="text-blue-600">
             create your account here
           </Link>
