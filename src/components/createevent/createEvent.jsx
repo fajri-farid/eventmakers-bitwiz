@@ -134,13 +134,12 @@ export const CreateEvents = () => {
           </div>
           <div className={boxStyle.separator}></div>
           <div className="pl-[40px] md:pl-0">
-            <div
+            <div className="text-bitwizz-blue">Thumbnail Event</div>
+            <input
+              type="text"
+              className={boxStyle.inputStyle}
               onChange={(e) => setImage(e.target.value)}
-              className="text-bitwizz-blue"
-            >
-              Thumbnail Event
-            </div>
-            <input type="text" className={boxStyle.inputStyle} />
+            />
             <div className="text-bitwizz-blue">Event Date</div>
             <input
               type="date"

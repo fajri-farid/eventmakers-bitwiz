@@ -1,8 +1,13 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export const ShowEvents = ({ data }) => {
+  const router = useRouter();
+
+  router.refresh();
+
   const onErrorHandler = (event) => {
     event.target.onerror = null;
     event.target.src = "/gambar.webp"; // Ganti dengan URL gambar placeholder Anda
