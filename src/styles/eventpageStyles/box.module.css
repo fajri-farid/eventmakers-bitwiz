@@ -8,7 +8,7 @@
   @apply outline-none  w-[320px] lg:w-[450px] h-[45px] rounded-md px-[15px] border-2 border-slate-200 focus:border-slate-700 duration-500;
 }
 .inputDesStyle {
-  @apply outline-none  w-[320px] lg:w-[450px] h-[135px] rounded-md px-[15px] border-2 border-slate-200 focus:border-slate-700 duration-500;
+  @apply outline-none  w-[320px] lg:w-[450px] h-[135px] rounded-md px-[15px] pt-1  border-2 border-slate-200 focus:border-slate-700 duration-500;
 }
 .buttonStyle {
   @apply btn w-[320px] lg:w-[450px] h-[45px] bg-bitwizz-pink text-white hover:text-bitwizz-pink rounded-md text-xl shadow-lg;

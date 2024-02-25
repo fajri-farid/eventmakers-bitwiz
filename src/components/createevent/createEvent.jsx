@@ -119,7 +119,7 @@ export const CreateEvents = () => {
               className={boxStyle.inputStyle}
             />
             <div className="text-bitwizz-blue">Description</div>
-            <input
+            <textarea
               type="text"
               onChange={(e) => setDescription(e.target.value)}
               className={boxStyle.inputDesStyle}
