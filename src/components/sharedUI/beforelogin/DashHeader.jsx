@@ -5,7 +5,7 @@ import Link from "next/link";
 export const DashHeader = () => {
   return (
     <header>
-      <div className="px-40 py-10 flex justify-between">
+      <div className="px-10 lg:px-40 py-10 flex justify-between">
         <div className="text-2xl text-bitwizz-blue font-semibold">
           Event <span className="text-bitwizz-pink">Corner</span>
         </div>
