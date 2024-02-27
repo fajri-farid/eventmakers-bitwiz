@@ -18,14 +18,14 @@ export const ShowEvents = ({ data }) => {
       {data.map((event) => (
         <div key={event.events.id}>
           {event.events.image ? (
-            <Image
+            <img
               src={event.events.image}
               onError={onErrorHandler}
               alt={event.events.title}
               className="w-full h-auto max-w-[600px] max-h-[300px] object-cover"
             />
           ) : (
-            <Image
+            <img
               src="/gambar.webp"
               alt="No Image"
               className="w-full h-auto max-w-[600px] max-h-[300px] object-cover"
