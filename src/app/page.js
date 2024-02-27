@@ -1,6 +1,6 @@
-import { LoginButton } from "@/components/mainpage/loginbutton";
-import { RegisterButton } from "@/components/mainpage/registerbutton";
 import ShowEvents from "@/components/mainpage/showEvent";
+import { DashHeader } from "@/components/sharedUI/beforelogin/DashHeader";
+import { Footer } from "@/components/sharedUI/footer/Footer";
 
 export async function getEvents() {
   const res = await fetch("https://eventmakers-api.fly.dev/events/");
@@ -14,11 +14,11 @@ export default async function Home() {
 
   return (
     <main className="p-5">
-      <div className="flex justify-end gap-5">
-        <LoginButton />
-        <RegisterButton />
-      </div>
+      <DashHeader />
       <ShowEvents data={data} />
+      <div className="mt-20">
+        <Footer />
+      </div>
     </main>
   );
 }

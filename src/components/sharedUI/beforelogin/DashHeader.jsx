@@ -9,9 +9,17 @@ export const DashHeader = () => {
         <div className="text-2xl text-bitwizz-blue font-semibold">
           Event <span className="text-bitwizz-pink">Corner</span>
         </div>
-        <Link href={""} className="text-xl text-bitwizz-pink font-bold">
-          Login
-        </Link>
+        <div>
+          <Link href="/login" className="text-xl text-bitwizz-pink font-bold">
+            Login
+          </Link>
+          <Link
+            href="/register"
+            className="text-xl text-bitwizz-pink font-bold"
+          >
+            Register
+          </Link>
+        </div>
       </div>
     </header>
   );

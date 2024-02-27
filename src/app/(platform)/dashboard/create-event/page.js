@@ -1,16 +1,14 @@
-import { BackButton } from "@/components/createevent/backBotton";
 import { CreateEvents } from "@/components/createevent/createEvent";
-import { DashHeader } from "@/components/sharedUI/beforelogin/DashHeader";
+import { Footer } from "@/components/sharedUI/footer/Footer";
 import React from "react";
 
 export default function page() {
   return (
     <main>
-      {/* <div className="ml-10 mt-4">
-        <BackButton />
-      </div> */}
       <CreateEvents />
-      <Footer />
+      <div className="mt-20">
+        <Footer />
+      </div>
     </main>
   );
 }

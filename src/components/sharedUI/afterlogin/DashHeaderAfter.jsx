@@ -1,12 +1,37 @@
 "use client";
 
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 
 export const DashHeaderAfter = () => {
+  const router = useRouter();
+  const [user, setUser] = useState(null);
+  // console.log(user);
+
+  function handleLogOut() {
+    // clear localstorage
+    localStorage.removeItem("user");
+    // clear cookies
+    Cookies.remove("token");
+    //redirect
+    router.push("/");
+  }
+
+  useEffect(() => {
+    const userFromLs = localStorage.getItem("user");
+    const parsedUserData = JSON.parse(userFromLs);
+    setUser(parsedUserData);
+  }, []);
+
   return (
     <header>
       <div className="navbar bg-base-100 justify-between px-40 py-10">
-        <Link href={""} className="font-semibold text-xl text-bitwizz-pink">
+        <Link
+          href="/dashboard"
+          className="font-semibold text-xl text-bitwizz-pink"
+        >
           Event<span>Corner</span>
         </Link>
         <div>
@@ -18,12 +43,12 @@ export const DashHeaderAfter = () => {
               My Event
             </Link>
             <Link
-              href={""}
+              href="/dashboard/create-event"
               className="font-semibold text-slate-500 hover:text-slate-700"
             >
               Create Event
             </Link>
-            <div className="font-semibold text-bitwizz-pink">Username</div>
+            <div className="font-semibold text-bitwizz-pink">{user?.name}</div>
           </div>
           <div className="dropdown dropdown-end">
             <div
@@ -49,7 +74,7 @@ export const DashHeaderAfter = () => {
                 <a>Joined Event</a>
               </li>
               <li>
-                <a>Logout</a>
+                <button onClick={handleLogOut}>logout</button>
               </li>
             </ul>
           </div>

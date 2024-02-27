@@ -1,7 +1,8 @@
 import React from "react";
 import { cookies } from "next/headers";
 import ShowEvents from "@/components/mainpage/showEvent";
-import { DashboardHeader } from "@/components/sharedUI/afterlogin/dashboardheader";
+import { DashHeaderAfter } from "@/components/sharedUI/afterlogin/DashHeaderAfter";
+import { Footer } from "@/components/sharedUI/footer/Footer";
 
 async function getUsers() {
   const token = cookies().get("token").value;
@@ -27,8 +28,11 @@ export default async function Page() {
   // console.log(usersData);
   return (
     <div>
-      <DashboardHeader />
+      <DashHeaderAfter />
       <ShowEvents data={data} />
+      <div className="mt-20">
+        <Footer />
+      </div>
     </div>
   );
 }
