@@ -1,6 +1,5 @@
 import { BackButton } from "@/components/createevent/backBotton";
 import { CreateEvents } from "@/components/createevent/createEvent";
-import { DashHeaderAfter } from "@/components/sharedUI/afterlogin/DashHeaderAfter";
 import React from "react";
 
 export default function page() {
@@ -11,6 +10,7 @@ export default function page() {
         <BackButton />
       </div>
       <CreateEvents />
+      <Footer />
     </main>
   );
 }
