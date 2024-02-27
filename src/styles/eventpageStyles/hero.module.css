@@ -1,0 +1,6 @@
+.heroStyle {
+  @apply text-xl md:text-4xl text-white;
+}
+.backButton {
+  @apply btn w-[30px] h-[30px] md:w-[60px] md:h-[60px] text-xl md:text-5xl text-center bg-white rounded-full shadow-xl;
+}
