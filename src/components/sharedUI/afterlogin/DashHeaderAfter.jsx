@@ -37,7 +37,7 @@ export const DashHeaderAfter = () => {
         <div>
           <div className="flex space-x-16 pr-2">
             <Link
-              href={""}
+              href="/dashboard/my-event"
               className="font-semibold text-slate-500 hover:text-slate-700"
             >
               My Event
