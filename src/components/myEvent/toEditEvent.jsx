@@ -54,47 +54,52 @@ export const ToEditEvent = ({ event }) => {
         throw new Error("Failed to update event.");
       }
       console.log("Event updated successfully!");
-      router.push("/dashboard");
+      router.push("/dashboard/my-event");
     } catch (error) {
       console.error("Error updating event:", error);
     }
   };
 
   return (
-    <div className="flex flex-col w-full p-20 gap-4">
+    <div>
       <Back />
-      <div>
+      <div className="flex flex-col w-full p-20 gap-4">
         <h2 className="text-center text-2xl">UPDATE EVENT</h2>
         <input
           placeholder="title"
           value={editedTitle}
           onChange={(e) => setEditedTitle(e.target.value)}
+          className="border-2 border-black p-4 mb-4 block rounded-lg w-full"
         />
         <input
           placeholder="description"
           value={editedDescription}
           onChange={(e) => setEditedDescription(e.target.value)}
+          className="border-2 border-black p-4 mb-4 block rounded-lg w-full"
         />
         <input
           placeholder="title"
           value={editedImage}
           onChange={(e) => setEditedImage(e.target.value)}
+          className="border-2 border-black p-4 mb-4 block rounded-lg w-full"
         />
         <input
           type="date"
           placeholder="title"
           value={editedDateTime}
           onChange={(e) => setEditedDateTime(e.target.value)}
+          className="border-2 border-black p-4 mb-4 block rounded-lg w-full"
         />
         <input
           placeholder="title"
           value={editedAuthor}
           onChange={(e) => setEditedAuthor(e.target.value)}
+          className="border-2 border-black p-4 mb-4 block rounded-lg w-full"
           disabled
         />
         <button
           onClick={handleSaveClick}
-          className="bg-pink-400 text-white py-2 px-4 md:py-3 md:px-6 lg:py-4 lg:px-8"
+          className="bg-pink-400 text-white py-2 px-4 md:py-3 md:px-6 lg:py-4 lg:px-8 rounded-md font-bold"
         >
           Update
         </button>

@@ -4,10 +4,7 @@ import React from "react";
 export default function page({ params }) {
   return (
     <div>
-      ini edit event!
-      <div>
-        <EditEvent params={params} />
-      </div>
+      <EditEvent params={params} />
     </div>
   );
 }
