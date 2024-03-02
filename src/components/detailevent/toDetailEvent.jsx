@@ -32,11 +32,13 @@ export const ToDetailEvent = ({ event }) => {
       <p className="text-2xl">{event?.description}</p>
       <p className="text-2xl">{event?.dateTime}</p>
       <p className="text-2xl">author by admin {event?.author}</p>
-      <Link href={`/event-detail/join-event/${event?.id}`}>
-        <button className="btn btn-ghost bg-indigo-500 text-[#ffffff] hover:btn hover:bg-indigo-500">
-          join event
-        </button>
-      </Link>
+      <div>
+        <Link href={`/detail-event/join-event/${event?.id}`}>
+          <button className="btn btn-ghost bg-indigo-500 text-[#ffffff] hover:btn hover:bg-indigo-500">
+            join event
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };
