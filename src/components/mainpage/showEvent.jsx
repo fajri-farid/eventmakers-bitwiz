@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export const ShowEvents = ({ data }) => {
   const router = useRouter();
@@ -35,6 +36,11 @@ export const ShowEvents = ({ data }) => {
             <p>{event.events.description}</p>
             <p className="font-bold">price: Rp. 100.000</p>
           </div>
+          <Link href={`/detail-event/${event.events.id}`}>
+            <button className="bg-pink-400 text-white py-2 px-4 md:py-3 md:px-6 lg:py-4 lg:px-8 rounded-md font-bold">
+              Get Info
+            </button>
+          </Link>
         </div>
       ))}
     </main>
