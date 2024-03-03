@@ -71,7 +71,9 @@ export const DashHeaderAfter = () => {
                 <a className="justify-between">My Event</a>
               </li>
               <li>
-                <a>Joined Event</a>
+                <Link href="/dashboard/event-i-joined">
+                  Joined Event
+                </Link>
               </li>
               <li>
                 <button onClick={handleLogOut}>logout</button>

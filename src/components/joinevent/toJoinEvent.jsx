@@ -3,13 +3,11 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-export const JoinEvent = ({ eventId }) => {
+export const ToJoinEvent = ({ event }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const router = useRouter();
-
-  console.log(eventId);
 
   async function handleJoinEvent() {
     try {
@@ -29,7 +27,7 @@ export const JoinEvent = ({ eventId }) => {
       } = JSON.parse(userData);
 
       const response = await fetch(
-        `https://eventmakers-api.fly.dev/events/${eventId}/join`,
+        `https://eventmakers-api.fly.dev/events/${event.id}/join`,
         {
           method: "POST",
           headers: {
@@ -48,7 +46,7 @@ export const JoinEvent = ({ eventId }) => {
       }
 
       const responseData = await response.json();
-      console.log("Join Event Response:", responseData);
+    //   console.log("Join Event Response:", responseData);
       // router.push("/dashboard");
     } catch (error) {
       console.error("Error joining event:", error.message);
