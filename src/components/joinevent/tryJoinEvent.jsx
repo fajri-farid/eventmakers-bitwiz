@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { ToEditEvent } from "./toEditEvent";
+import { ToJoinEvent } from "./toJoinEvent";
 
 export async function GetDetailEvent(eventId) {
   try {
@@ -23,7 +23,7 @@ export async function GetDetailEvent(eventId) {
   }
 }
 
-export const EditEvent = ({ params }) => {
+export const TryJoinEvent = ({ params }) => {
   const { eventId } = params;
   const [dataDetailEvent, setDataDetailEvent] = useState(null);
 
@@ -43,7 +43,7 @@ export const EditEvent = ({ params }) => {
 
   return (
     <div>
-      <ToEditEvent event={dataDetailEvent} />
+      <ToJoinEvent event={dataDetailEvent} />
     </div>
   );
 };
