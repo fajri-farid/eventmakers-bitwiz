@@ -1,43 +1,59 @@
-'use client';
+"use client";
 
-import { Card } from './card';
-import registeredEvent from './registeredEvent';
+import { useState, useEffect } from "react";
+import registeredEvent from "./registeredEvent";
+import Link from "next/link";
 
 export const JoinedEvent = () => {
-    const { isLoading, dataEvent, user } = registeredEvent();
-    return (
-        <div className="px-6 py-3 lg:py-6 w-full">
-            <h1 className="text-2xl lg:text-3xl font-bold">
-                Welcome back, {user && user.name} 👋
-            </h1>
-            <h4 className="text-xl font-medium mt-[30px]">
-                🎉 List Registered to Event
-            </h4>
-            <div className="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 md:grid-cols-2 gap-4 mt-4 w-full">
-                {isLoading ? (
-                    <>
-                        <div className="skeleton w-96 h-48 bg-slate-100 opacity-35"></div>
-                    </>
+  const { isLoading, dataEvent, user } = registeredEvent();
+
+  const onErrorHandler = (event) => {
+    event.target.onerror = null;
+    event.target.src = "/gambar.webp";
+  };
+
+  return (
+    <div className="px-6 py-3 lg:py-6 w-full">
+      <h2 className="font-bold text-2xl text-center">Joined Event</h2>
+      {isLoading ? (
+        <div className="skeleton w-96 h-48 bg-slate-100 opacity-35"></div>
+      ) : (
+        <>
+          {dataEvent !== null && dataEvent.length > 0 ? (
+            dataEvent.map((event) => (
+              <div key={event.events.id} className="m-2 p-10">
+                {event.events.image ? (
+                  <img
+                    src={event.events.image}
+                    onError={onErrorHandler}
+                    alt={event.events.title}
+                    className="w-full h-auto max-w-[600px] max-h-[300px] object-cover"
+                  />
                 ) : (
-                    <>
-                        {dataEvent !== null ? (
-                            dataEvent.map((e) => {
-                                return (
-                                    <Card
-                                        id={e.events.id}
-                                        key={e.events.id}
-                                        image={e.events.image}
-                                        title={e.events.title}
-                                        date={e.events.dateTime}
-                                    />
-                                );
-                            })
-                        ) : (
-                            <p>Data belum ada.</p>
-                        )}
-                    </>
+                  <img
+                    src="/gambar.webp"
+                    alt="No Image"
+                    className="w-full h-auto max-w-[600px] max-h-[300px] object-cover"
+                  />
                 )}
-            </div>
-        </div>
-    );
+                <div className="pt-10">
+                  <h2>{event.events.title}</h2>
+                  <p>{event.events.description}</p>
+                  <p className="font-bold">price: Rp. 100.000</p>
+                  <p>creator: Bitwizz</p>
+                </div>
+                <Link href={`/dashboard/my-event/${event.events.id}`}>
+                  <button className="btn btn-ghost bg-indigo-500 text-[#ffffff] hover:btn hover:bg-indigo-500">
+                    Detail
+                  </button>
+                </Link>
+              </div>
+            ))
+          ) : (
+            <p>Data belum ada.</p>
+          )}
+        </>
+      )}
+    </div>
+  );
 };
