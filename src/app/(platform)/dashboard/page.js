@@ -3,6 +3,7 @@ import { cookies } from "next/headers";
 import ShowEvents from "@/components/mainpage/showEvent";
 import { DashHeaderAfter } from "@/components/sharedUI/afterlogin/DashHeaderAfter";
 import { Footer } from "@/components/sharedUI/footer/Footer";
+import { ShowEventForDashboard } from "@/components/dashboard/showEventForDashboard";
 
 async function getUsers() {
   const token = cookies().get("token").value;
@@ -29,7 +30,7 @@ export default async function Page() {
   return (
     <div>
       <DashHeaderAfter />
-      <ShowEvents data={data} />
+      <ShowEventForDashboard data={data} />
       <div className="mt-20">
         <Footer />
       </div>
